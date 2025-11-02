@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora de pendientes y ecuaciones lineales">
+    <meta name="author" content="Estudiantes">
+    <title data-es="Calculadora de Pendientes" data-en="Slope Calculator">Calculadora de Pendientes</title>
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="pendiente.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Botones de idioma -->
+        <div class="language-toggle">
+            <button class="lang-btn active" data-lang="es" onclick="cambiarIdioma('es')">ES</button>
+            <button class="lang-btn" data-lang="en" onclick="cambiarIdioma('en')">EN</button>
+        </div>
+        
+        <!-- Título -->
+        <h1 data-es="Pendiente y Ecuación de la Recta" data-en="Slope and Line Equation">
+            Pendiente y Ecuación de la Recta
+        </h1>
+        
+        <!-- Información de integrantes -->
+        <div class="integrantes">
+            <div class="logo-container">
+                <img src="LogoColegio.png" alt="School Logo" class="school-logo">
+            </div>
+            <div class="names-info">
+                <p><strong data-es="Desarrollado por:" data-en="Developed by:">Desarrollado por:</strong></p>
+                <p class="student-name">Samuel García Restrepo</p>
+                <p class="student-name">Álvaro Manuel Mutis Martínez</p>
+                <p class="student-name">Miguel Ángel Velásquez Jaramillo</p>
+                <p class="year">2025</p>
+            </div>
+        </div>
+        
+        <!-- Instrucciones -->
+        <div class="instrucciones">
+            <p><strong data-es="Instrucciones:" data-en="Instructions:">Instrucciones:</strong></p>
+            <p data-es="Hola, ¿cómo estás?" data-en="Hello, how are you?">
+                Hola, ¿cómo estás?
+            </p>
+            <p data-es="Vamos a calcular la pendiente de la función lineal que prefieras." 
+               data-en="Let's calculate the slope of the linear function you prefer.">
+                Vamos a calcular la pendiente de la función lineal que prefieras.
+            </p>
+            <p data-es="Como estamos siempre pendientes de ti, ingresa las coordenadas de tus dos puntos en los siguientes campos:" 
+               data-en="As we are always looking out for you, enter the coordinates of your two points:">
+                Como estamos siempre pendientes de ti, ingresa las coordenadas de tus dos puntos en los siguientes campos:
+            </p>
+        </div>
+        
+        <!-- Formulario -->
+        <form id="formularioPendiente">
+            <!-- Primer punto -->
+            <div class="coordinate-section">
+                <h3 class="coordinate-title" data-es="Coordenadas del primer punto" 
+                    data-en="First point coordinates">
+                    Coordenadas del primer punto
+                </h3>
+                <div class="coordinate-pair">
+                    <div class="input-group">
+                        <label for="x1">x₁</label>
+                        <input type="text" 
+                               id="x1" 
+                               name="x1" 
+                               inputmode="decimal"
+                               pattern="-?[0-9]*\.?[0-9]+"
+                               required
+                               data-es-placeholder="12"
+                               data-en-placeholder="12"
+                               placeholder="12">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="y1">y₁</label>
+                        <input type="text" 
+                               id="y1" 
+                               name="y1" 
+                               inputmode="decimal"
+                               pattern="-?[0-9]*\.?[0-9]+"
+                               required
+                               data-es-placeholder="0.3"
+                               data-en-placeholder="0.3"
+                               placeholder="0.3">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Segundo punto -->
+            <div class="coordinate-section">
+                <h3 class="coordinate-title" data-es="Coordenadas del segundo punto" 
+                    data-en="Second point coordinates">
+                    Coordenadas del segundo punto
+                </h3>
+                <div class="coordinate-pair">
+                    <div class="input-group">
+                        <label for="x2">x₂</label>
+                        <input type="text" 
+                               id="x2" 
+                               name="x2" 
+                               inputmode="decimal"
+                               pattern="-?[0-9]*\.?[0-9]+"
+                               required
+                               data-es-placeholder="15"
+                               data-en-placeholder="15"
+                               placeholder="15">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="y2">y₂</label>
+                        <input type="text" 
+                               id="y2" 
+                               name="y2" 
+                               inputmode="decimal"
+                               pattern="-?[0-9]*\.?[0-9]+"
+                               required
+                               data-es-placeholder="8.5"
+                               data-en-placeholder="8.5"
+                               placeholder="8.5">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botones -->
+            <div class="button-container">
+                <button type="submit" class="calcular-btn"
+                        data-es="Calcular" data-en="Calculate">
+                    Calcular
+                </button>
+                <button type="button" class="reset-btn" onclick="limpiar()"
+                        data-es="Limpiar Todo" data-en="Clear All">
+                    Limpiar Todo
+                </button>
+            </div>
+        </form>
+        
+        <!-- Área de resultado -->
+        <div id="resultado"></div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="pendiente.js"></script>
+</body>
+</html>

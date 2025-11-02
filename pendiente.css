@@ -1,0 +1,502 @@
+/* ============================================
+   ESTILOS GENERALES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #538594 0%, #468660 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 650px;
+    width: 100%;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ============================================
+   BOTONES DE IDIOMA
+   ============================================ */
+
+.language-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 5px;
+    background-color: #DBE2E5;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.lang-btn {
+    background-color: transparent;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #538594;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background-color: #E9E9E9;
+}
+
+.lang-btn.active {
+    background-color: #468660;
+    color: #FFFFFF;
+}
+
+/* ============================================
+   TÍTULO
+   ============================================ */
+
+h1 {
+    text-align: center;
+    color: #538594;
+    font-size: 28px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+/* ============================================
+   SECCIÓN DE INTEGRANTES
+   ============================================ */
+
+.integrantes {
+    background-color: #F3F2F2;
+    border: 2px solid #DBE2E5;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-container {
+    flex-shrink: 0;
+}
+
+.school-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.names-info {
+    flex-grow: 1;
+}
+
+.names-info p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.names-info strong {
+    color: #538594;
+    font-size: 15px;
+}
+
+.student-name {
+    color: #468660;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.year {
+    color: #A1A7A5;
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 8px;
+}
+
+/* ============================================
+   INSTRUCCIONES
+   ============================================ */
+
+.instrucciones {
+    background-color: #538594;
+    color: #FFFFFF;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.instrucciones p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.instrucciones strong {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* ============================================
+   FORMULARIO
+   ============================================ */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.coordinate-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.coordinate-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #538594;
+    margin: 0;
+}
+
+.coordinate-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-weight: 600;
+    color: #538594;
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+}
+
+input[type="text"] {
+    padding: 15px;
+    border: 3px solid #538594;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+    background-color: #FFFFFF;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"]::placeholder {
+    color: #C0C0C0;
+    opacity: 1;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #468660;
+    box-shadow: 0 0 0 3px rgba(70, 134, 96, 0.1);
+}
+
+input[type="text"]:hover {
+    border-color: #468660;
+}
+
+/* Efecto para valores calculados */
+input.calculated {
+    animation: pulse 0.6s ease;
+    background-color: #E9F5ED;
+    border-color: #468660;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
+.button-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    flex: 1;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calcular-btn {
+    background-color: #468660;
+    color: #FFFFFF;
+}
+
+.calcular-btn:hover {
+    background-color: #3a7050;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(70, 134, 96, 0.3);
+}
+
+.calcular-btn:active {
+    transform: translateY(0);
+}
+
+.reset-btn {
+    background-color: #8D584D;
+    color: #FFFFFF;
+}
+
+.reset-btn:hover {
+    background-color: #754a41;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(141, 88, 77, 0.3);
+}
+
+.reset-btn:active {
+    transform: translateY(0);
+}
+
+/* ============================================
+   ÁREA DE RESULTADO
+   ============================================ */
+
+#resultado {
+    margin-top: 25px;
+    padding: 25px;
+    background-color: #E9F5ED;
+    border-left: 4px solid #468660;
+    border-radius: 10px;
+    display: none;
+}
+
+#resultado.show {
+    display: block;
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#resultado h2 {
+    color: #468660;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#resultado p {
+    color: #333;
+    margin: 15px 0;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+#resultado strong {
+    color: #538594;
+    font-size: 22px;
+}
+
+/* Estilo matemático para la ecuación y pendiente */
+.math-result {
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.equation-display {
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 26px;
+    color: #333;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.slope-value {
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+}
+
+#resultado .vertical-line-equation {
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: #8D584D;
+}
+
+/* Colores para variables y valores */
+.var-m {
+    color: #468660;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.var-b {
+    color: #8D584D;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.var-y {
+    color: #538594;
+    font-style: italic;
+}
+
+.var-x {
+    color: #538594;
+    font-style: italic;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+        max-width: 95%;
+    }
+    
+    h1 {
+        font-size: 22px;
+        margin-top: 30px;
+    }
+    
+    .integrantes {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .school-logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .coordinate-pair {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .coordinate-title {
+        font-size: 14px;
+    }
+    
+    input[type="text"] {
+        font-size: 18px;
+        padding: 10px;
+    }
+    
+    label {
+        font-size: 15px;
+    }
+    
+    .button-container {
+        flex-direction: column;
+    }
+    
+    button {
+        width: 100%;
+    }
+    
+    .language-toggle {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .equation-display {
+        font-size: 18px;
+        padding: 12px;
+    }
+    
+    .slope-value {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 18px;
+    }
+    
+    .instrucciones {
+        padding: 15px;
+        font-size: 13px;
+    }
+    
+    .coordinate-pair {
+        gap: 8px;
+    }
+    
+    input[type="text"] {
+        padding: 8px;
+        font-size: 16px;
+    }
+    
+    label {
+        font-size: 13px;
+    }
+    
+    button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .equation-display {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
